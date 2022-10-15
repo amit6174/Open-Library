@@ -5,7 +5,7 @@ Step 1 : Get familiar with Google Appscripts - https://www.youtube.com/watch?v=a
 
 Step 2 : Copy & Paste the code (2 files) in this repository to the Google Appscipt (with some changes)
 
-Step 3 : Change general acces of your google sheet to "Anyone with the link -> Viewer"
+Step 3 : Change general access of your google sheet to "Anyone with the link -> Viewer"
 
 Step 4: Create QR-codes using your sheet itself - https://www.youtube.com/watch?v=Gv96Tl7RCxo
 
