@@ -2,7 +2,9 @@
 Tutorial to create a simple online database for your library
 
 Step 1 : Get familiar with Google Appscripts - https://www.youtube.com/watch?v=aPJ-2U45BpA&list=PLv9Pf9aNgemv62NNC5bXLR0CzeaIj5bcw
+
 Step 2 : Copy & Paste the code (2 files) in this repository to the Google Appscipt (with some changes)
+
 Step 3 : Create QR-codes using your sheet itself - https://www.youtube.com/watch?v=Gv96Tl7RCxo
 
 
