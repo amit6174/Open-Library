@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+        html,body{
+          display: grid;
+          height: 100%;
+          width: 100%;
+          place-items: center;
+          background: #B5AC63;
+          /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+        }
+        ::selection{
+          background: #4158d0;
+          color: #fff;
+        }
+        .container .post{
+          display: none;
+        }
+        .container .text{
+          font-size: 75px;
+          color: #394D10;
+          font-weight: 500;
+        }
+        .container .edit{
+          position: absolute;
+          right: 10px;
+          top: 5px;
+          font-size: 60px;
+          color: #666;
+          font-weight: 500;
+          cursor: pointer;
+        }
+        .container .edit:hover{
+          text-decoration: underline;
+        }
+        .wrapper{
+          width: 1000px;
+          background: #fff;
+          border-radius: 15px;
+          box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+        }
+        .wrapper .title{
+          font-family: 'Garamond', serif;
+          font-size: 70px;
+          font-weight: 600;
+          text-align: center;
+          line-height: 200px;
+          color: #fff;
+          user-select: none;
+          border-radius: 15px 15px 0 0;
+          background: #8D8750;
+        }
+        .wrapper form{
+          padding: 10px 30px 50px 30px;
+        }
+        .wrapper form .field{
+          height: 100px;
+          width: 100%;
+          margin-top: 40px;
+          position: relative;
+        }
+        .wrapper form .field input{
+          height: 100%;
+          width: 100%;
+          outline: none;
+          font-size: 35px;
+          padding-left: 40px;
+          border: 1px solid lightgrey;
+          border-radius: 25px;
+          transition: all 0.3s ease;
+        }
+        .wrapper form .field input:focus,
+        form .field input:valid{
+          border-color: #8D8750;
+        }
+        .wrapper form .field label{
+          position: absolute;
+          top: 50%;
+          left: 40px;
+          color: #8D8750;
+          font-weight: 400;
+          font-size: 35px;
+          pointer-events: none;
+          transform: translateY(-50%);
+          transition: all 0.3s ease;
+        }
+        form .field input:focus ~ label,
+        form .field input:valid ~ label{
+          top: 0%;
+          font-size: 32px;
+          color:#8D8750;
+          background: #fff;
+          transform: translateY(-50%);
+        }
+        form .content{
+          display: flex;
+          width: 100%;
+          height: 100px;
+          font-size: 32px;
+          align-items: center;
+          justify-content: space-around;
+        }
+        form .content .select{
+          display: flex;
+          width: 100%;
+          height: 100px;
+          font-size: 32px;
+          align-items: center;
+          justify-content: space-around;
+        }
+        form .content input{
+          width: 30px;
+          height: 30px;
+          background: red;
+        }
+        form .content label{
+          color: #8D8750;
+          user-select: none;
+          padding-left: 10px;
+        }
+        form .content .pass-link{
+          color: "";
+        }
+        form .field input[type="submit"]{
+          color: #fff;
+          border: none;
+          padding-left: 0;
+          margin-top: -10px;
+          font-size: 40px;
+          font-weight: 500;
+          cursor: pointer;
+          background: #8D8750;
+          transition: all 0.3s ease;
+        }
+        form .field input[type="submit"]:active{
+          transform: scale(0.95);
+        }
+        form .signup-link{
+          color: #5D4211;
+          margin-top: 40px;
+          text-align: center;
+        }
+        form .pass-link a,
+        form .signup-link a{
+          color: #4158d0;
+          text-decoration: none;
+        }
+        form .pass-link a:hover,
+        form .signup-link a:hover{
+          text-decoration: underline;
+        }
+      </style>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            New Book Entry
+         </div>
+         <form action="#">
+            <div class="field">
+               <input type="text" required id="dname">
+               <label>Donor Name</label>
+            </div>
+            <div class="field">
+               <input type="text" required id="bname">
+               <label>Book Name*</label>
+            </div>
+            <div class="field">
+               <input type="text" required id="auth">
+               <label>Author</label>
+            </div>
+            <div class="field" style = "font-size: 60px">
+              <center>
+              <select class="field" id="lang" style="font-size:25px">
+                <option style="font-size:20px color: #8D8750" disabled selected value>Language</option>
+                <option style="font-size:27px">English</option>
+                <option style="font-size:27px">Hindi</option>
+                <option style="font-size:27px">Marathi</option>
+              </select>
+              </center>
+            </div>
+            
+            <br>
+            <div class="field">
+               <input type="submit" id="btn" value="Submit">
+            </div>
+            <div class="signup-link" style="font-size:27px">
+               “When we are collecting books, we are collecting happiness!!”
+            </div>
+
+         </form>
+      </div>
+
+      <div class="container">
+        <div class="post">
+          <div class="text">Thanks for the feedback!</div>
+          <div class="edit"></div>
+        </div>
+        
+      </div>
+
+      <script>
+      
+      document.getElementById("btn").addEventListener("click", doStuff);
+      
+      function doStuff(){
+
+        var bookInfo = {};
+
+        bookInfo.donor = document.getElementById("dname").value;
+        bookInfo.bookName = document.getElementById("bname").value;
+        bookInfo.author = document.getElementById("auth").value;
+        bookInfo.language = document.getElementById("lang").value;
+        // bookInfo.rate0 = document.getElementById("rate").value;
+
+        if(bookInfo.bookName != ""){
+          google.script.run.userClicked(bookInfo);
+          //document.getElementById("dname").value = "";
+          document.getElementById("bname").value = "";
+          document.getElementById("auth").value = "";
+          //document.getElementById("lang").value = "";
+          // document.getElementById("rate").value = "";
+        }       
+      }
+
+      btn.onclick = (e)=>{
+        console.log(e.target);
+
+        wrapper.style.display = "none";
+        post.style.display = "block";
+
+        return false;
+      }
+
+    </script>
+   </body>
+</html>
