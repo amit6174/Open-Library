@@ -39,4 +39,4 @@ Eventually an intuition suggests that people will get adapted to this simple sys
 
 Aristotle - "We are what we repeatedly do"
 
-A reading habit to the young generations, is an ultimate gift to the world!
+A reading habit to the younger generations, is an ultimate gift to the world!
