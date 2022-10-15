@@ -7,9 +7,9 @@ Step 2 : Copy & Paste the code (2 files) in this repository to the Google Appsci
 
 Step 3 : Change general access of your google sheet to "Anyone with the link -> Viewer"
 
-Step 4: Create QR-codes using your sheet itself - https://www.youtube.com/watch?v=Gv96Tl7RCxo
+Step 4: Create QR-codes using your sheet itself - https://www.youtube.com/watch?v=Gv96Tl7RCxo (Note : QR codes get updated if the url gets updated during delpoyment)
 
-Hurray! You're done. You can send the qr-code to the public to update the catalogue / give feedback for the library system.
+Hurray! You're done. You can send the qr-code to the users to update the catalogue / give feedback for the library system.
 
 ## Info
 
