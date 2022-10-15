@@ -5,8 +5,11 @@ Step 1 : Get familiar with Google Appscripts - https://www.youtube.com/watch?v=a
 
 Step 2 : Copy & Paste the code (2 files) in this repository to the Google Appscipt (with some changes)
 
-Step 3 : Create QR-codes using your sheet itself - https://www.youtube.com/watch?v=Gv96Tl7RCxo
+Step 3 : Change general acces of your google sheet to "Anyone with the link -> Viewer"
 
+Step 4: Create QR-codes using your sheet itself - https://www.youtube.com/watch?v=Gv96Tl7RCxo
+
+Hurray! You're done. You can send the qr-code to the public to update the catalogue / give feedback for the library system.
 
 This system uses Google Appscript to store history-based catalogue of your "open"-library automatically updating after each donation / feedback. Please note this is a simple system which is not fully dynamic in nature. So, this catalogue would NOT represent the current names of books at the present moment, but rather be a list of books which have gone through the system atleast once in the past.
 
